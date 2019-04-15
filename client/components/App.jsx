@@ -2,7 +2,7 @@ import React from 'react'
 import GeekJokes from './GeekJokes'
 import News from './News'
 import Xkcd from './Xkcd'
-import Horoscopes from './Horoscope'
+import Horoscope from './Horoscope'
 import Weather from './Weather'
 import Finance from './Finance'
 
@@ -47,7 +47,7 @@ export default class App extends React.Component {
                 <GeekJokes />
               </div>
               <div className="col s12">
-                <Horoscopes />
+                <Horoscope />
               </div>
             </div>
 
