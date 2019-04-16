@@ -3,14 +3,14 @@ import { getFinance } from '../api/finance'
 
 export default class Finance extends React.Component {
   state = {
-    news: []
+    finance: []
   }
 
   componentDidMount() {
     getFinance()
       .then(res => {
         this.setState({
-          news: res
+          finance: res
         })
       })
       .catch(err => {
@@ -22,12 +22,11 @@ export default class Finance extends React.Component {
     return (
       <React.Fragment>
         <h2>Finance Times</h2>
-        {this.state.news.map(article => {
+        {this.state.finance.slice(0, 3).map(article => {
           return (
             <div key={article.index}>
               <h5>{article.title}</h5>
               <p>{article.content}</p>
-              <p>- News sourced from {article.url}</p>
             </div>
           )
         })}
