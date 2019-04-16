@@ -44,7 +44,7 @@ import request from 'superagent'
              ip: this.state.network.ip
            },
            weather: {
-             urlF: `http://api.apixu.com/v1/forecast.json?key=${this.state.weather.apiK}&q=${res.body.location.city}`,
+             urlF: 'http://api.apixu.com/v1/forecast.json?key=' + this.state.weather.apiK + '&q=' + res.body.location.city
            }
          })
          this.callWeather()
