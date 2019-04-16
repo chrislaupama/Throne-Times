@@ -22,13 +22,12 @@ export default class News extends React.Component {
     return (
       <React.Fragment>
         <h2>Local News</h2>
-        {this.state.news.map(article => {
+        {this.state.news.slice(0, 3).map(article => {
           return (
             <div key={article.index}>
               <h5>{article.title}</h5>
               <em>{article.description}</em>
               <p>{article.content}</p>
-              <p>- News sourced from {article.agent}</p>
             </div>
           )
         })}
