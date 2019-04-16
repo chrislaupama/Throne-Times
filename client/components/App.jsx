@@ -5,6 +5,7 @@ import Xkcd from './Xkcd'
 import Horoscope from './Horoscope'
 import Weather from './Weather'
 import Finance from './Finance'
+import Thrones from './Thrones'
 
 let today = new Date()
 let dd = String(today.getDate()).padStart(2, '0')
@@ -47,6 +48,9 @@ export default class App extends React.Component {
               </div>
             </div>
             <div className='col l4'>
+            <div className='col s12'>
+                <Thrones />
+              </div>
               <div className='col s12'>
                 <Weather />
               </div>
