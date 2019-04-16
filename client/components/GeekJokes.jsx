@@ -14,8 +14,8 @@ export default class GeekJokes extends React.Component {
       })
     })
     .catch(err => {
-        this.setState({ geekJokes: err.message })
-      })
+      console.error('Error:', err)
+    })
   }
 
   render() {

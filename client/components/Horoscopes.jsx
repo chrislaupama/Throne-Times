@@ -22,6 +22,9 @@ export default class Horoscopes extends React.Component {
         }
       })
     })
+    .catch(err => {
+      console.error('Error:', err)
+    })
   }
 
   render() {

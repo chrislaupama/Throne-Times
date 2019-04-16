@@ -36,6 +36,9 @@ export default class News extends React.Component {
         }
       })
     })
+    .catch(err => {
+      console.error('Error:', err)
+    })
   }
 
   render() {
