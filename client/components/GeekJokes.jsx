@@ -1,5 +1,5 @@
 import React from 'react'
-import request from 'superagent'
+import {getGeekJokes} from '../api/geekjokes'
 
 export default class GeekJokes extends React.Component {
   state = {
@@ -7,13 +7,14 @@ export default class GeekJokes extends React.Component {
   }
 
   componentDidMount() {
-    request
-      .get('https://geek-jokes.sameerkumar.website/api')
-      .then(res => {
-        this.setState({ geekJokes: res.body })
+    getGeekJokes()
+    .then(joke => {
+      this.setState({
+        geekJokes: joke
       })
-      .catch(err => {
-        this.setState({ message: err.message })
+    })
+    .catch(err => {
+        this.setState({ geekJokes: err.message })
       })
   }
 
