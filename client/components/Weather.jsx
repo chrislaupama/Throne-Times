@@ -12,7 +12,6 @@ import request from 'superagent'
         },
       network: {
         apiK: 'at_LGwxqmdmYjaoalUDESDzJZAcCEyjy',
-        urlIP: 'https://api.ipify.org?format=json',
         urlLocation : '',
         ip: '',
         location: ''
@@ -26,7 +25,7 @@ import request from 'superagent'
    
    findIP() {
      request
-       .get(this.state.network.urlIP)
+       .get('https://api.ipify.org?format=json')
        .then( res => {
          this.setState({
            network: {
