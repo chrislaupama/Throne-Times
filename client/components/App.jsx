@@ -6,6 +6,13 @@ import Horoscope from './Horoscope'
 import Weather from './Weather'
 import Finance from './Finance'
 
+let today = new Date();
+let dd = String(today.getDate()).padStart(2, '0');
+let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let yyyy = today.getFullYear();
+
+let date = dd + '/' + mm + '/' + yyyy
+
 export default class App extends React.Component {
   render () {
     return (
@@ -14,14 +21,17 @@ export default class App extends React.Component {
           <div className="row">
             <center>
               <div className="col l12">
-                <h1 className="title">The Goku Times</h1>
+                <h1 className="title">Throne Times</h1>
               </div>
             </center>
           </div>
           <div className="row">
             <hr/>
-          <strong>Issue 9,001</strong> - Friday, 16 November 2018
+          <strong>Issue 9,001</strong> - {date}
             <hr/>
+          </div>
+          <div className="row">
+          <Thrones />
           </div>
           <div className="row">
             <div className="col l8">
